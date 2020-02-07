@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Products from './components/Products/Products';
 
 const App = () => {
-	console.log(42);
+	const filteredProducts: any[] = [];
+
+	const handleAddToCart = () => {
+		console.log('handleAddToCart');
+	};
 
 	return (
-		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className=' App-link'
-					href='https://reactjs.org'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Learn React
-				</a>
-			</header>
+		<div className='container'>
+			<h1>React TS Cart</h1>
+			<hr/>
+			<div className='row'>
+				<div className='col-md-8'>
+					<Products data={filteredProducts} handleAddToCart={handleAddToCart} />
+				</div>
+				<div className='col-md-4'>
+					Cart
+				</div>
+			</div>
 		</div>
 	);
 };
