@@ -24,7 +24,7 @@ export default (
 			};
 		case getType(actions.hideAlert):
 			return {
-				display: false, // action.data
+				display: action.data,
 			};
 		default:
 			return state;

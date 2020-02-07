@@ -4,7 +4,7 @@ import Products from './components/Products/Products';
 
 export interface IApp {
 	showAlert: () => void;
-	hideAlert: () => void;
+	hideAlert: (data: boolean) => void;
 	display: boolean;
 	//text: string;
 	//id: number;
@@ -24,7 +24,7 @@ const App = ({showAlert, hideAlert, display}: IApp) => {
 
 	const but2ClickHandler = () => {
 		console.log('but2ClickHandler');
-		hideAlert();
+		hideAlert(false);
 	};
 
 	return (
