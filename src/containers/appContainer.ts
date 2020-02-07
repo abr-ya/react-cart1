@@ -1,6 +1,6 @@
 import App from '../App';
 import {connect} from 'react-redux';
-import {showAlert, hideAlert} from '../actions/alertActions';
+import {showAlert, hideAlert, firstSaga} from '../actions/alertActions';
 
 import {RootState} from '../index';
 
@@ -11,6 +11,7 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = {
 	showAlert,
 	hideAlert,
+	firstSaga,
 };
 
 // связываем компонент с Redux

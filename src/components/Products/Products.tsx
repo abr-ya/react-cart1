@@ -3,8 +3,8 @@ import {IProducts} from './interfaces';
 
 const Products = ({data, handleAddToCart}: IProducts) => {
 	console.log('products');
-	console.log(data);
-	console.log(handleAddToCart);
+	//console.log(data);
+	//console.log(handleAddToCart);
 
 	return (
 		<div>
