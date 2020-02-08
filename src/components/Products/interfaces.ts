@@ -1,7 +1,11 @@
 export interface IProduct {
-	text: string;
 	id: number;
-	done: boolean;
+	sku: string;
+	title: string;
+	description: string;
+	availableSizes: string[];
+	price: number;
+	isFreeShipping: boolean;
 }
 
 export interface IProducts {

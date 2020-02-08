@@ -1,20 +1,20 @@
 import App from '../App';
 import {connect} from 'react-redux';
-import {showAlert, hideAlert, firstSaga} from '../actions/alertActions';
+import {showLoading, hideLoading, requestProductsSaga} from '../actions/productActions';
 
 import {RootState} from '../index';
 
 const mapStateToProps = (state: RootState) => ({
-	display: state.alert.display,
+	loading: state.product.loading,
+	products: state.product.products,
 });
 
 const mapDispatchToProps = {
-	showAlert,
-	hideAlert,
-	firstSaga,
+	showLoading,
+	hideLoading,
+	requestProductsSaga,
 };
 
-// связываем компонент с Redux
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps,

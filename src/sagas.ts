@@ -1,16 +1,18 @@
-import {call, put, takeLatest, takeEvery, select} from 'redux-saga/effects';
+import {call, takeLatest, put} from 'redux-saga/effects'; // takeEvery, select
 import * as api from './api';
-import * as alertActions from './actions/alertActions';
-import {alertActionTypes} from './actions/actionTypes';
+import * as productActions from './actions/productActions';
+import {productActionTypes} from './actions/productActionTypes';
 //import {RootState} from 'main';
 
-function* requestFirstSaga(action: ReturnType<typeof alertActions.firstSaga>) {
+function* requestProductsSaga(action: ReturnType<typeof productActions.requestProductsSaga>) {
 	try {
-		console.log('requestFirstSaga');
-		const response = yield call(api.requestNetsFromApi);
+		yield put(productActions.showLoading());
+		const response = yield call(api.requestProducts);
 		console.log(response.data);
+		yield put(productActions.setProducts(response.data));
+		yield put(productActions.hideLoading(false));
 		//yield put(actions.setNets(response.data.networks));
-		//yield put(cartActions.setCartIsLoading(true));
+		//
 		//const response = yield call(requestCartData, action.payload);
 		//yield put(cartActions.setCartData(response.data.data));
 		//yield put(cartActions.setCartIsLoading(false));
@@ -20,5 +22,5 @@ function* requestFirstSaga(action: ReturnType<typeof alertActions.firstSaga>) {
 }
 
 export default function* watchEntities() {
-	yield takeLatest(alertActionTypes.FIRST_SAGA, requestFirstSaga);
+	yield takeLatest(productActionTypes.REQUEST_PRODUCTS_SAGA, requestProductsSaga);
 }

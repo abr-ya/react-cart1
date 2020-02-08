@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import alertReducer from './alertReducer';
+import productReducer from './productReducer';
 
 const createRootReducer = () =>
 	combineReducers({
-		alert: alertReducer,
+		product: productReducer,
 	});
 
 export default createRootReducer;
