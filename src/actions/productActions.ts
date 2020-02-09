@@ -9,3 +9,9 @@ export const requestProductsSaga = createAction(productActionTypes.REQUEST_PRODU
 export const setProducts = createCustomAction(productActionTypes.SET_PRODUCTS,
 	(data: any[]) => ({data}),
 );
+export const setSort = createCustomAction(productActionTypes.SET_SORT,
+	(sort: string) => ({sort}),
+);
+export const setSize = createCustomAction(productActionTypes.SET_SIZE,
+	(size: string) => ({size}),
+);

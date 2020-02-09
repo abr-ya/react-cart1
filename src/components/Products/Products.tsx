@@ -1,5 +1,5 @@
 import React from 'react';
-import {IProducts} from './interfaces';
+import {IProducts} from '../../interfaces';
 import * as utils from '../../utils';
 
 const Products = ({data, handleAddToCart}: IProducts) => {
