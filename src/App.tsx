@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './App.css';
 import Products from './components/Products/Products';
 import Filter from './components/Filter/Filter';
+import Cart from './components/Cart/Cart';
 import {IApp, IProduct} from './interfaces';
 
 const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, size}: IApp) => {
@@ -44,12 +45,15 @@ const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, si
 		console.log('handleAddToCart');
 	};
 
+	const handleRemoveFromCart = (id: number) => {
+		console.log('handleRemoveFromCart', id);
+	};
+
 	const sortChange = (text: any) => {
 		setSort(text);
 	};
 
 	const sizeChange = (text: any) => {
-		console.log('sizeChange');
 		setSize(text);
 	};
 
@@ -66,7 +70,7 @@ const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, si
 					<Products data={sortedProducts} handleAddToCart={handleAddToCart} />
 				</div>
 				<div className='col-md-4'>
-					Cart
+					<Cart  cartItems={[]} handleRemoveFromCart={handleRemoveFromCart} />
 					loading: {loading ? 'true' : 'false'}
 				</div>
 			</div>

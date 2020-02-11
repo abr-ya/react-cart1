@@ -36,3 +36,8 @@ export interface IFilter {
 	};
 	count: number;
 }
+
+export interface ICart {
+	cartItems: IProduct[];
+	handleRemoveFromCart(id: number): void;
+}
