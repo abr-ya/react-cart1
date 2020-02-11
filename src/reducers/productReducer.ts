@@ -8,6 +8,7 @@ export type productState = Readonly<{
 	products: any[];
 	sort: string;
 	size: string;
+	cart: any[];
 }>;
 
 const initialState: productState = {
@@ -15,6 +16,7 @@ const initialState: productState = {
 	products: [],
 	sort: '',
 	size: '',
+	cart: [],
 };
 
 export type productActions = ActionType<typeof actions>;
@@ -48,6 +50,14 @@ export default (
 			return {
 				...state,
 				size: action.size,
+			};
+		case getType(actions.addToCart):
+			const newCart = [...state.cart];
+			newCart[action.id] =  state.cart[action.id] ? parseInt(state.cart[action.id], 10) + 1 : 1;
+
+			return {
+				...state,
+				cart: newCart,
 			};
 		default:
 			return state;

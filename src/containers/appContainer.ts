@@ -1,6 +1,6 @@
 import App from '../App';
 import {connect} from 'react-redux';
-import {showLoading, hideLoading, requestProductsSaga, setSort, setSize} from '../actions/productActions';
+import {showLoading, hideLoading, requestProductsSaga, setSort, setSize, addToCart} from '../actions/productActions';
 
 import {RootState} from '../index';
 
@@ -9,6 +9,7 @@ const mapStateToProps = (state: RootState) => ({
 	products: state.product.products,
 	sort: state.product.sort,
 	size: state.product.size,
+	cart: state.product.cart,
 });
 
 const mapDispatchToProps = {
@@ -17,6 +18,7 @@ const mapDispatchToProps = {
 	requestProductsSaga,
 	setSort,
 	setSize,
+	addToCart,
 };
 
 export default connect(

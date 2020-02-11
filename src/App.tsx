@@ -5,7 +5,7 @@ import Filter from './components/Filter/Filter';
 import Cart from './components/Cart/Cart';
 import {IApp, IProduct} from './interfaces';
 
-const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, size}: IApp) => {
+const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, size, addToCart, cart}: IApp) => {
 	const filteredProducts: IProduct[] = size ? products.filter(item => (item.availableSizes.includes(size))) : products;
 	console.log('filtered:', filteredProducts);
 
@@ -41,8 +41,9 @@ const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, si
 	// eslint-disable-next-line
 	}, []);
 
-	const handleAddToCart = () => {
-		console.log('handleAddToCart');
+	const handleAddToCart = (id: number) => {
+		console.log('handleAddToCart', id);
+		addToCart(id);
 	};
 
 	const handleRemoveFromCart = (id: number) => {
@@ -70,7 +71,7 @@ const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, si
 					<Products data={sortedProducts} handleAddToCart={handleAddToCart} />
 				</div>
 				<div className='col-md-4'>
-					<Cart  cartItems={[]} handleRemoveFromCart={handleRemoveFromCart} />
+					<Cart cartItems={cart} handleRemoveFromCart={handleRemoveFromCart} />
 					loading: {loading ? 'true' : 'false'}
 				</div>
 			</div>

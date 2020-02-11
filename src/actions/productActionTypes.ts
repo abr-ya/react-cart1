@@ -5,4 +5,5 @@ export enum productActionTypes {
 	SET_PRODUCTS = 'SET_PRODUCTS',
 	SET_SORT = 'SET_SORT',
 	SET_SIZE = 'SET_SIZE',
+	ADD_TO_CART = 'ADD_TO_CART',
 }

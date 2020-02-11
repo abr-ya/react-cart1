@@ -4,10 +4,12 @@ export interface IApp {
 	requestProductsSaga: () => void;
 	setSort: (text: string) => void;
 	setSize: (text: string) => void;
+	addToCart: (id: number) => void;
 	loading: boolean;
 	products: any[];
 	sort: string;
 	size: string;
+	cart: any[];
 	//text: string;
 	//id: number;
 }
@@ -38,6 +40,6 @@ export interface IFilter {
 }
 
 export interface ICart {
-	cartItems: IProduct[];
+	cartItems: any[];
 	handleRemoveFromCart(id: number): void;
 }

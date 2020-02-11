@@ -15,3 +15,6 @@ export const setSort = createCustomAction(productActionTypes.SET_SORT,
 export const setSize = createCustomAction(productActionTypes.SET_SIZE,
 	(size: string) => ({size}),
 );
+export const addToCart = createCustomAction(productActionTypes.ADD_TO_CART,
+	(id: number) => ({id}),
+);
