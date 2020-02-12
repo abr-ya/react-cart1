@@ -9,7 +9,7 @@ export interface IApp {
 	products: any[];
 	sort: string;
 	size: string;
-	cart: any[];
+	cart: any;
 	//text: string;
 	//id: number;
 }
@@ -40,6 +40,6 @@ export interface IFilter {
 }
 
 export interface ICart {
-	cartItems: any[];
+	cartItems: any;
 	handleRemoveFromCart(id: number): void;
 }
