@@ -11,9 +11,6 @@ const Cart = ({cartItems, handleRemoveFromCart}: ICart) => {
 
 	return (
 		<div>
-			Cart
-			<button onClick={() => handleRemoveFromCart(1)}>тест удалить</button>
-
 			<div className='alert alert-info'>
 				{Object.keys(cartItems).length === 0
 					? 'Basket is empty' :
@@ -21,7 +18,12 @@ const Cart = ({cartItems, handleRemoveFromCart}: ICart) => {
 				}
 				{Object.keys(cartItems).length > 0 && (
 					<ul>
-						{cartItemsArr.map(item => (<li key={item[0]}>id {item[0]}: {item[1]}</li>))}
+						{cartItemsArr.map(item => (
+							<li key={item[0]}>
+								id {item[0]}: {item[1]}
+								<button className='btn btn-danger' onClick={() =>handleRemoveFromCart(item[0])}>X</button>
+							</li>
+						))}
 					</ul>
 				)}
 			</div>

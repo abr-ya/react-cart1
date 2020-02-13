@@ -7,7 +7,7 @@ import {IApp, IProduct} from './interfaces';
 
 const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, size, addToCart, cart}: IApp) => {
 	const filteredProducts: IProduct[] = size ? products.filter(item => (item.availableSizes.includes(size))) : products;
-	console.log('filtered:', filteredProducts);
+	//console.log('filtered:', filteredProducts);
 
 	// tslint:disable-next-line: no-shadowed-variable
 	const sortProductsPriceUp = (products: IProduct[]) =>
@@ -34,7 +34,7 @@ const App = ({requestProductsSaga, loading, products, setSort, sort, setSize, si
 		sortedProducts = sortProductsPriceDown(filteredProducts);
 	}
 
-	console.log('sorted:', sortedProducts);
+	//console.log('sorted:', sortedProducts);
 
 	useEffect(() => {
 		requestProductsSaga();

@@ -10,8 +10,6 @@ export interface IApp {
 	sort: string;
 	size: string;
 	cart: any;
-	//text: string;
-	//id: number;
 }
 
 export interface IProduct {
