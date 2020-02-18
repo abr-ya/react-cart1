@@ -19,7 +19,7 @@ const Products = ({data, handleAddToCart}: IProducts) => {
 			</div>
 		</div>
 	));
-	console.log('productsHtml', productsHtml);
+	//console.log('productsHtml', productsHtml);
 
 	return (
 		<div className='row'>

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ICart} from '../../interfaces';
 
-const Cart = ({cartItems, handleRemoveFromCart}: ICart) => {
-	console.log('cart: ', cartItems);
+const Cart = ({products, cartItems, handleRemoveFromCart}: ICart) => {
+	useEffect(() => {
+		//console.log('cart in Cart!');
+	// eslint-disable-next-line
+	}, [cartItems]);
+
+	//console.log('cart: ', cartItems);
 	const cartItemsArr = [];
 	if (Object.keys(cartItems).length > 0) {
 		// tslint:disable-next-line: forin
@@ -14,14 +19,14 @@ const Cart = ({cartItems, handleRemoveFromCart}: ICart) => {
 			<div className='alert alert-info'>
 				{Object.keys(cartItems).length === 0
 					? 'Basket is empty' :
-					<div>You have {Object.keys(cartItems).length} items in the basket. <hr /></div>
+					<div>You have {Object.keys(cartItems).length} items in the basket:</div>
 				}
 				{Object.keys(cartItems).length > 0 && (
 					<ul>
 						{cartItemsArr.map(item => (
 							<li key={item[0]}>
-								id {item[0]}: {item[1]}
-								<button className='btn btn-danger' onClick={() =>handleRemoveFromCart(item[0])}>X</button>
+								{products.find(prod => prod.id.toString() === item[0])?.title}: {item[1]}
+								<button className='btn btn-danger btn-xs' onClick={() =>handleRemoveFromCart(item[0])}>X</button>
 							</li>
 						))}
 					</ul>

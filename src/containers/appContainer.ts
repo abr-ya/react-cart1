@@ -1,6 +1,6 @@
 import App from '../App';
 import {connect} from 'react-redux';
-import {showLoading, hideLoading, requestProductsSaga, setSort, setSize, addToCart} from '../actions/productActions';
+import {showLoading, hideLoading, requestProductsSaga, setSort, setSize, addToCart, delFromCart} from '../actions/productActions';
 
 import {RootState} from '../index';
 
@@ -19,6 +19,7 @@ const mapDispatchToProps = {
 	setSort,
 	setSize,
 	addToCart,
+	delFromCart,
 };
 
 export default connect(

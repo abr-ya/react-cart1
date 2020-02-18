@@ -8,14 +8,9 @@ function* requestProductsSaga(action: ReturnType<typeof productActions.requestPr
 	try {
 		yield put(productActions.showLoading());
 		const response = yield call(api.requestProducts);
-		console.log(response.data);
+		console.log('data: ', response.data);
 		yield put(productActions.setProducts(response.data));
 		yield put(productActions.hideLoading(false));
-		//yield put(actions.setNets(response.data.networks));
-		//
-		//const response = yield call(requestCartData, action.payload);
-		//yield put(cartActions.setCartData(response.data.data));
-		//yield put(cartActions.setCartIsLoading(false));
 	} catch (error) {
 		console.error(error);
 	}

@@ -18,3 +18,6 @@ export const setSize = createCustomAction(productActionTypes.SET_SIZE,
 export const addToCart = createCustomAction(productActionTypes.ADD_TO_CART,
 	(id: number) => ({id}),
 );
+export const delFromCart = createCustomAction(productActionTypes.DEL_FROM_CART,
+	(id: number) => ({id}),
+);

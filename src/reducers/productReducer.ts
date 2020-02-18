@@ -1,7 +1,6 @@
 import {ActionType, getType} from 'typesafe-actions';
 
 import * as actions from '../actions/productActions';
-// SHOW_ALERT, HIDE_ALERT
 
 export type productState = Readonly<{
 	loading: boolean;
@@ -16,7 +15,7 @@ const initialState: productState = {
 	products: [],
 	sort: '',
 	size: '',
-	cart: {},
+	cart: {2: 1, 3: 2},
 };
 
 export type productActions = ActionType<typeof actions>;
@@ -58,6 +57,14 @@ export default (
 					...state.cart,
 					[action.id]: state.cart[action.id] ? parseInt(state.cart[action.id], 10) + 1 : 1,
 				},
+			};
+		case getType(actions.delFromCart):
+			const newCart = state.cart;
+			delete newCart[action.id];
+
+			return {
+				...state,
+				cart: {...newCart},
 			};
 		default:
 			return state;

@@ -5,6 +5,7 @@ export interface IApp {
 	setSort: (text: string) => void;
 	setSize: (text: string) => void;
 	addToCart: (id: number) => void;
+	delFromCart: (id: number) => void;
 	loading: boolean;
 	products: any[];
 	sort: string;
@@ -38,6 +39,7 @@ export interface IFilter {
 }
 
 export interface ICart {
+	products: IProduct[];
 	cartItems: any;
 	handleRemoveFromCart(id: number): void;
 }
