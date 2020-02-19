@@ -10,12 +10,12 @@ const Products = ({data, handleAddToCart}: IProducts) => {
 			<div className='thumbnail text-center' onClick={() => handleAddToCart(item.id)}>
 				<img src={`/products/${item.sku}_2.jpg`} alt={item.sku} />
 				<p>{item.title}</p>
-			</div>
-			<div>
-				<b>{utils.formatCurrency(item.price)}</b>
-				<button className='btn btn-primary' onClick={() => handleAddToCart(item.id)} >
-					Add To cart
-				</button>
+				<div>
+					<b>{utils.formatCurrency(item.price)}</b>
+					<button className='btn btn-primary' onClick={() => handleAddToCart(item.id)} >
+						Add To cart
+					</button>
+				</div>
 			</div>
 		</div>
 	));
