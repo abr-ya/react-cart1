@@ -33,14 +33,12 @@ const App = ({
 		return 0;
 	});
 
-	let sortedProducts = products;
+	let sortedProducts = filteredProducts;
 	if (sort === 'lowestprice') {
 		sortedProducts = sortProductsPriceUp(filteredProducts);
 	} else if (sort === 'highestprice') {
 		sortedProducts = sortProductsPriceDown(filteredProducts);
 	}
-
-	//console.log('sorted:', sortedProducts);
 
 	useEffect(() => {
 		requestProductsSaga();
