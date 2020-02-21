@@ -7,10 +7,10 @@ const Products = ({data, handleAddToCart}: IProducts) => {
 	//console.log(handleAddToCart);
 	const productsHtml = data.map(item => (
 		<div className='col-md-4' key={item.id}>
-			<div className='thumbnail text-center' onClick={() => handleAddToCart(item.id)}>
+			<div className='card text-center mb-3' onClick={() => handleAddToCart(item.id)}>
 				<img src={`/products/${item.sku}_2.jpg`} alt={item.sku} />
-				<p>{item.title}</p>
-				<div>
+				<div className='card-body'>
+					<p>{item.title}</p>
 					<b>{utils.formatCurrency(item.price)}</b>
 					<button className='btn btn-primary' onClick={() => handleAddToCart(item.id)} >
 						Add To cart

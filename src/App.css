@@ -1,23 +1,32 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .cart ul {
-  padding: 0;
+	padding: 0;
 }
 
 .cart li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 .cart hr {
-  border-top: 1px solid black;
-  margin: 10px;
+	border-top: 1px solid black;
+	margin: 10px;
 }
 
 .cart .btn-xs {
-  padding: 2px;
-  padding-top: 0;
-  margin-right: 3px;
-  line-height: 0.9;
+	padding: 2px;
+	padding-top: 0;
+	margin-right: 3px;
+	line-height: 0.9;
+}
+
+.card {
+	display: block;
+	padding: 5px;
+}
+
+.card-body p {
+	height: 50px;
 }

@@ -4,6 +4,7 @@ import Products from './components/Products/Products';
 import Filter from './components/Filter/Filter';
 import Cart from './components/Cart/Cart';
 import {IApp, IProduct} from './interfaces';
+import Loader from './components/Loader/Loader';
 
 const App = ({
 	requestProductsSaga,
@@ -70,17 +71,21 @@ const App = ({
 		<div className='container'>
 			<h1>React TS Cart</h1>
 			<hr/>
-			<div className='row'>
-				<div className='col-md-8'>
-					<Filter size={size} sort={sort} handlers={filterHandlers} count={products.length} />
-					<hr/>
-					<Products data={sortedProducts} handleAddToCart={handleAddToCart} />
-				</div>
-				<div className='col-md-4'>
-					<Cart products={products} cartItems={cart} handleRemoveFromCart={handleRemoveFromCart} />
-					loading: {loading ? 'true' : 'false'}
-				</div>
-			</div>
+				{loading
+					? <Loader/>
+					: (
+					<div className='row'>
+						<div className='col-md-8'>
+							<Filter size={size} sort={sort} handlers={filterHandlers} count={products.length} />
+							<hr/>
+							<Products data={sortedProducts} handleAddToCart={handleAddToCart} />
+						</div>
+						<div className='col-md-4'>
+							<Cart products={products} cartItems={cart} handleRemoveFromCart={handleRemoveFromCart} />
+						</div>
+					</div>
+					)
+				}
 		</div>
 	);
 };
