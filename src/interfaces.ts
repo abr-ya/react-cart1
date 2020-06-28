@@ -15,7 +15,7 @@ export interface IApp {
 
 export interface IProduct {
 	id: number;
-	sku: string;
+	sku: number;
 	title: string;
 	description: string;
 	availableSizes: string[];
