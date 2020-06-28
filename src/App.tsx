@@ -24,7 +24,7 @@ const App = ({
 	];
 
 	return (
-		<BrowserRouter basename='/'>
+		<BrowserRouter basename='/demo/shop/'>
 			<div className='container'>
 				<Nav title={title} links={links} />
 			</div>
