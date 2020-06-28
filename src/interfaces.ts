@@ -13,6 +13,17 @@ export interface IApp {
 	cart: any;
 }
 
+export interface IHome {
+	setSort: (text: string) => void;
+	setSize: (text: string) => void;
+	addToCart: (id: number) => void;
+	delFromCart: (id: number) => void;
+	products: any[];
+	sort: string;
+	size: string;
+	cart: any;
+}
+
 export interface IProduct {
 	id: number;
 	sku: number;

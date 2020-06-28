@@ -7,7 +7,7 @@ const Products = ({data, handleAddToCart}: IProducts) => {
 	//console.log(handleAddToCart);
 	const productsHtml = data.map(item => (
 		<div className='col-md-4' key={item.id}>
-			<div className='card text-center mb-3' onClick={() => handleAddToCart(item.id)}>
+			<div className='card text-center mb-3'>
 				<img src={`/products/${item.sku}_2.jpg`} alt={`/products/${item.sku}`} />
 				<div className='card-body'>
 					<p>{item.title}</p>
